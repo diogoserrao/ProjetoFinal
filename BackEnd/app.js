@@ -11,6 +11,8 @@ var flash = require('connect-flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var postsRouter = require('./routes/posts')
+
 
 var app = express();
 
@@ -28,6 +30,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
