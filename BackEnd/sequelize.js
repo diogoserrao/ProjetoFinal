@@ -3,7 +3,7 @@ dotenv.config();
 
 const{ Sequelize, DataTypes} = require('sequelize');
 const UserDataModel = require('./models/Users');
-
+const PostDataModel = require('./models/Posts')
 
 const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_USER, process.env.DB_PASS,{ 
     dialect: 'mysql'
@@ -11,8 +11,11 @@ const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_U
 
 const User = UserDataModel(sequelize_instance, DataTypes);
 const Post = PostDataModel(sequelize_instance, DataTypes);
+<<<<<<< HEAD
 const Comment = CommentDataModel(sequelize_instance, DataTypes);
 
+=======
+>>>>>>> 93b342895e91e0e1a421be925a26410f913db828
 
 sequelize_instance.authenticate()
     .then (() => {
