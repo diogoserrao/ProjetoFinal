@@ -5,3 +5,15 @@ exports.getAllUsers = (req, res) => {
         res.send(posts);
     });
 }
+
+exports.deletePost = (req, res) =>{
+
+};
+
+exports.createPost = (req, res) =>{
+
+};
+
+exports.updatePost = (req, res) =>{
+
+};
