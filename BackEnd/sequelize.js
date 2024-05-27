@@ -5,6 +5,8 @@ const{ Sequelize, DataTypes} = require('sequelize');
 const UserDataModel = require('./models/Users');
 const PostDataModel = require('./models/Posts');
 const CommentDataModel = require('./models/Comments');
+const LikeDataModel = require('./models/Likes');
+
 
 const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_USER, process.env.DB_PASS,{ 
     dialect: 'mysql'
@@ -13,6 +15,7 @@ const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_U
 const User = UserDataModel(sequelize_instance, DataTypes);
 const Post = PostDataModel(sequelize_instance, DataTypes);
 const Comment = CommentDataModel(sequelize_instance, DataTypes);
+const Like = LikeDataModel(sequelize_instance, DataTypes);
 
 sequelize_instance.authenticate()
     .then (() => {
@@ -29,5 +32,5 @@ sequelize_instance.sync({ force: true})
     });
 
 module.exports = {
-    User, Post, Comment
+    User, Post, Comment, Like
 }
