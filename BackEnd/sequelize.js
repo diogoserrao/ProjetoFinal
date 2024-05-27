@@ -3,14 +3,14 @@ dotenv.config();
 
 const{ Sequelize, DataTypes} = require('sequelize');
 const UserDataModel = require('./models/Users');
-
+const PostDataModel = require('./models/Posts');
 
 const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_USER, process.env.DB_PASS,{ 
     dialect: 'mysql'
 })
 
 const User = UserDataModel(sequelize_instance, DataTypes);
-
+const Post = PostDataModel(sequelize_instance, DataTypes);
 
 sequelize_instance.authenticate()
     .then (() => {
@@ -27,5 +27,5 @@ sequelize_instance.sync({ force: true})
     });
 
 module.exports = {
-    User
+    User, Post
 }
