@@ -1,34 +1,33 @@
-const { FOREIGNKEYS } = require("sequelize/lib/query-types");
-
-module.exports = (sequelize, type) =>{
-    return sequelize.define('post', {
-        user_id: {
+module.exports = (sequelize, type) => {
+    return sequelize.define('tweet', {
+        tweetID: {
             type: type.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        username: {
-            type: type.STRING(50),
-            unique: true,
-            allowNull: false
+        userID: {
+            type: type.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'users',
+                key: 'user_id'
+            }
         },
-        email: {
-            type: type.STRING(100),
-            unique: true,
-            allowNull: false
-        },
-        pass: {
-            type: type.STRING(100),
-            allowNull: false
-        },
-        fullname: {
-            type: type.STRING(100),
-            allowNull: false
-        },
-        bio: {
-            type: type.TEXT,
+        tweetText: {
+            type: type.STRING(280),
             allowNull: true
+        },
+        tweetDate: {
+            type: type.DATE,
+            defaultValue: type.NOW
+        },
+        parent_tweet_id: {
+            type: type.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'tweets',
+                key: 'tweetID'
+            }
         }
-        }
-    );
-}
+    });
+};
