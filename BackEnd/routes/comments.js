@@ -5,11 +5,11 @@ var CommentsController = require('../controllers/CommentsController');
 
 router.get('/', CommentsController.getAllComments);
 
-router.post('/', CommentsController.createComment);
+router.post('/NewComment', CommentsController.createComment);
 
-router.delete('/', CommentsController.deleteComment);
+router.delete('/DeleteComment', CommentsController.deleteComment);
 
-router.put('/', CommentsController.updateComment);
+router.put('/UpdateComment', CommentsController.updateComment);
 
 
 module.exports = router;
