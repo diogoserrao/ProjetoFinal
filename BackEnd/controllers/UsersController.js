@@ -7,9 +7,9 @@ exports.getAllUsers = (req, res) => {
 };
 
 exports.deleteUser = (req, res) => {
-    const user_id = req.params.id;
+    const userID = req.params.id;
     User.destroy({
-        where: { user_id: user_id }
+        where: { userID: userID }
     })
     .then(deleted => {
         if (deleted) {
@@ -24,6 +24,10 @@ exports.deleteUser = (req, res) => {
 };
 exports.createUser = (req, res) => {
     const { username, email, pass, fullname, bio } = req.body;
+    if (!username || !email || !pass || !fullname) {
+        res.send({ message: 'User deleted successfully' });
+        return
+    }
     User.create({
         username: username,
         email: email,

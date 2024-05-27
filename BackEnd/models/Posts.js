@@ -10,7 +10,7 @@ module.exports = (sequelize, type) => {
             allowNull: false,
             references: {
                 model: 'users',
-                key: 'user_id'
+                key: 'userID'
             }
         },
         tweetText: {

@@ -6,10 +6,16 @@ const UserDataModel = require('./models/Users');
 const PostDataModel = require('./models/Posts');
 const CommentDataModel = require('./models/Comments');
 const LikeDataModel = require('./models/Likes');
-
+console.log(process.env.DB_SCHEMA)
 
 const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_USER, process.env.DB_PASS,{ 
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectOptions: {
+        ssl: {
+            require: true
+        }
+    },
+    host: process.env.DB_HOST,
 })
 
 const User = UserDataModel(sequelize_instance, DataTypes);
@@ -28,7 +34,7 @@ sequelize_instance.authenticate()
 sequelize_instance.sync({ force: true})
     .then(() =>{
         console.log("Tables Created!");
-        User.create({email:'diogoserrao@gmail.com', password:'12345'})
+        User.create({email:'diogoserrao@gmail.com', pass:'12345',username:'diogo23',fullname:'diogoaeqwe1123'})
     });
 
 module.exports = {

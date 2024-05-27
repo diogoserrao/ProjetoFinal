@@ -1,8 +1,8 @@
 const { FOREIGNKEYS } = require("sequelize/lib/query-types");
 
 module.exports = (sequelize, type) =>{
-    return sequelize.define('post', {
-        user_id: {
+    return sequelize.define('user', {
+        userID: {
             type: type.INTEGER,
             autoIncrement: true,
             primaryKey: true
