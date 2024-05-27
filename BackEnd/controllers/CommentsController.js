@@ -1,5 +1,6 @@
+const Comment = require('../sequelize').Comment
 exports.getAllComments = (req, res) => {
-    User.findAll().then(comments => {
+    Comment.findAll().then(comments => {
         res.send(comments);
     });
 };
