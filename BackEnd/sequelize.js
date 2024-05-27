@@ -12,6 +12,7 @@ const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_U
 const User = UserDataModel(sequelize_instance, DataTypes);
 const Post = PostDataModel(sequelize_instance, DataTypes);
 
+
 sequelize_instance.authenticate()
     .then (() => {
         console.log("Connection has been established");
@@ -27,5 +28,5 @@ sequelize_instance.sync({ force: true})
     });
 
 module.exports = {
-    User
+    User, Post, Comment
 }
