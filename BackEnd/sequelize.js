@@ -1,7 +1,7 @@
 var dotenv = require('dotenv');
 dotenv.config();
 
-const{ Sequelize, DataTypes} = require('sequelize');
+const{ Sequelize, DataTypes} = require('sequelize');https://open.spotify.com/album/5VdyJkLe3yvOs0l4xXbWp0
 const UserDataModel = require('./models/Users');
 const PostDataModel = require('./models/Posts');
 const CommentDataModel = require('./models/Comments');
