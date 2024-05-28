@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var LikesController = require('../controllers/LikesController');
 
-router.get('/', LikesController.getAllLikes);
+router.get('/Likes', LikesController.getAllLikes);
 
 router.post('/NewLike', LikesController.createLike);
 

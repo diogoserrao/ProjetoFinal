@@ -3,7 +3,7 @@ var router = express.Router();
 var PostsController = require('../controllers/PostsController');
 
 
-router.get('/', PostsController.getAllPosts);
+router.get('/Posts', PostsController.getAllPosts);
 
 router.post('/NewPost', PostsController.createPost);
 

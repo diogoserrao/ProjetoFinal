@@ -7,7 +7,7 @@ const { User } = require('../sequelize.js');
 
 router.use(authenticateTokenFromHeaders);
 
-router.get('/', UsersController.getAllUsers);
+router.get('/Users', UsersController.getAllUsers);
 
 router.post('/NewUser', UsersController.createUser);
 
