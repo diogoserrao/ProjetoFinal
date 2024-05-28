@@ -25,7 +25,7 @@ exports.deleteUser = (req, res) => {
 exports.createUser = (req, res) => {
     const { username, email, pass, fullname, bio } = req.body;
     if (!username || !email || !pass || !fullname) {
-        res.send({ message: 'User deleted successfully' });
+        res.send({ message: 'User created successfully' });
         return
     }
     User.create({
