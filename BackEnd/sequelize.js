@@ -31,10 +31,10 @@ sequelize_instance.authenticate()
         console.log("Unable to connect", err);
     });
 
-sequelize_instance.sync({ force: true})
+sequelize_instance.sync({ force: false})
     .then(() =>{
         console.log("Tables Created!");
-        User.create({email:'diogoserrao@gmail.com', pass:'12345',username:'diogo23',fullname:'diogoaeqwe1123'})
+        //User.create({email:'diogoserrao@gmail.com', pass:'12345',username:'diogo23',fullname:'diogoaeqwe1123'})
     });
 
 module.exports = {
