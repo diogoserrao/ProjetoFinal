@@ -11,7 +11,7 @@ export function ButtonThemeDarkOrLight({isDarkTheme, ...rest}: ButtonThemeDarkOr
       {...rest}
       type="button"
     >  
-      <span>{isDarkTheme === 'false' ? '🌞' : '🌚'}</span>
+      <span>{isDarkTheme === 'false' ? '☀️' : '🌙'}</span>
     </S.buttonThemeDarkOrLight>
   )
 }

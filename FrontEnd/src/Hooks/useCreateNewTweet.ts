@@ -8,8 +8,8 @@ const schema = z.object({
   newTweet: z
     .string()
     .trim()
-    .max(280, 'Máximo 280 caracteres para um tweet 😎')
-    .min(3, 'Mínimo 3 caracteres para um tweet 😎')
+    .max(280, 'Máximo 280 caracteres para um tweet ')
+    .min(3, 'Mínimo 3 caracteres para um tweet ')
 })
 
 export type FormPropsZod = z.infer<typeof schema>
