@@ -10,7 +10,7 @@ export function Tweet({ content }: TweetProps) {
   return (
     <S.linkTweet to={`/status/${content}`}>
       <S.divTweetContent>
-        <PerfilAvatar {username} {fullnamename} />
+        <PerfilAvatar username="diogo" name="diogo12345" />
         <S.tweetContentP>{content}</S.tweetContentP>
 
         <S.tweetContentFooter>
