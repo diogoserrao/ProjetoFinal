@@ -9,7 +9,6 @@ router.use(authenticateTokenFromHeaders);
 
 router.get('/', UsersController.getAllUsers);
 
-
 router.post('/NewUser', UsersController.createUser);
 
 router.delete('/DeleteUser', UsersController.deleteUser);
