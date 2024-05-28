@@ -22,10 +22,10 @@ exports.deleteLike = (req, res) => {
         res.status(500).send({ error: 'An error occurred while deleting the post' });
     });
 };
-exports.createPost = (req, res) =>{
+exports.createLike = (req, res) =>{
 
 };
 
-exports.updatePost = (req, res) =>{
+exports.updateLike = (req, res) =>{
 
 };
