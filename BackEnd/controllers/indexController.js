@@ -33,7 +33,7 @@ exports.login = (req, res) => {
 
 exports.signup = (req, res) => {
 
-    var { email, password } = req.body;
+    var { username, email, pass, fullname } = req.body;
 
     User.findOne({
         where: {
@@ -41,9 +41,9 @@ exports.signup = (req, res) => {
         }
     }).then(result => {
         if(result == null){
-            User.create({ 'email': email, 'password': password})
+            User.create({ 'username': username,'email': email, 'pass': pass, 'fullname': fullname})
             .then(user => {
-                var token = generateAccessToken(email,password);
+                var token = generateAccessToken(email,pass);
                 res.send({user: user, token: token});
             });
         }

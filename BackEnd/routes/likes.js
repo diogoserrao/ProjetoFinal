@@ -4,11 +4,11 @@ var LikesController = require('../controllers/LikesController');
 
 router.get('/', LikesController.getAllLikes);
 
-router.post('/NewLike', LikesController.createLike);
+router.post('/', LikesController.createLike);
 
-router.delete('/DeleteLike', LikesController.deleteLike);
+router.delete('/', LikesController.deleteLike);
 
-router.put('/UpdateLike', LikesController.updateLike);
+router.put('/', LikesController.updateLike);
 
 
 module.exports = router;
