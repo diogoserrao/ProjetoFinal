@@ -1,6 +1,6 @@
 const { FOREIGNKEYS } = require("sequelize/lib/query-types");
 
-module.exports = (sequelize, type) =>{
+module.exports = (sequelize, type) => {
     return sequelize.define('user', {
         userID: {
             type: type.INTEGER,
@@ -28,7 +28,10 @@ module.exports = (sequelize, type) =>{
         bio: {
             type: type.TEXT,
             allowNull: true
+        },
+        profileImage: {
+            type: type.STRING,
+            allowNull: true
         }
-        }
-    );
-}
+    });
+};

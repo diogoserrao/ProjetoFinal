@@ -6,6 +6,7 @@ const UserDataModel = require('./models/Users');
 const PostDataModel = require('./models/Posts');
 const CommentDataModel = require('./models/Comments');
 const LikeDataModel = require('./models/Likes');
+const Administrator = require('./models/Admins')(Sequelize);
 console.log(process.env.DB_SCHEMA)
 
 const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_USER, process.env.DB_PASS,{ 
@@ -36,6 +37,7 @@ sequelize_instance.sync({ force: false})
         console.log("Tables Created!");
         //User.create({email:'diogoserrao@gmail.com', pass:'12345',username:'diogo23',fullname:'diogoaeqwe1123'})
     });
+
 
 module.exports = {
     User, Post, Comment, Like

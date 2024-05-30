@@ -23,7 +23,7 @@ exports.deleteUser = (req, res) => {
     });
 };
 exports.createUser = (req, res) => {
-    const { username, email, pass, fullname, bio } = req.body;
+    const { username, email, pass, fullname } = req.body;
     if (!username || !email || !pass || !fullname) {
         res.send({ message: 'User created successfully' });
         return
