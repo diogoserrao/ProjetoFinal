@@ -7,13 +7,13 @@ const { User } = require('../sequelize.js');
 
 router.use(authenticateTokenFromHeaders);
 
-router.get('/Users', UsersController.getAllUsers);
+router.get('/', UsersController.getAllUsers);
 
-router.post('/NewUser', UsersController.createUser);
+router.post('/', UsersController.createUser);
 
-router.delete('/DeleteUser', UsersController.deleteUser);
+router.delete('/', UsersController.deleteUser);
 
-router.put('/UpdateUser', UsersController.updateUser);
+router.put('/', UsersController.updateUser);
 
 module.exports = router;
 

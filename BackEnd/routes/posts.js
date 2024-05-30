@@ -3,12 +3,12 @@ var router = express.Router();
 var PostsController = require('../controllers/PostsController');
 
 
-router.get('/Posts', PostsController.getAllPosts);
+router.get('/', PostsController.getAllPosts);
 
-router.post('/NewPost', PostsController.createPost);
+router.post('/', PostsController.createPost);
 
-router.delete('/DeletePost', PostsController.deletePost);
+router.delete('/', PostsController.deletePost);
 
-router.put('/UpdatePost', PostsController.updatePost);
+router.put('/', PostsController.updatePost);
 
 module.exports = router;

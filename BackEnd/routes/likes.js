@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 var LikesController = require('../controllers/LikesController');
 
-router.get('/Likes', LikesController.getAllLikes);
+router.get('/', LikesController.getAllLikes);
 
-router.post('/NewLike', LikesController.createLike);
+router.post('/', LikesController.createLike);
 
-router.delete('/DeleteLike', LikesController.deleteLike);
+router.delete('/', LikesController.deleteLike);
 
-router.put('/UpdateLike', LikesController.updateLike);
+router.put('/', LikesController.updateLike);
 
 
 module.exports = router;
