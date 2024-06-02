@@ -1,13 +1,13 @@
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, type) => {
     return sequelize.define('administrator', {
         adminID: {
-            type: DataTypes.INTEGER,
+            type: type.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
         userID: {
-            type: DataTypes.INTEGER,
+            type: type.INTEGER,
             unique: true,
             references: {
                 model: 'users', // Nome da tabela referenciada
@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         created_at: {
-            type: DataTypes.DATE,
-            defaultValue: DataTypes.NOW
+            type: type.DATE,
+            defaultValue: type.NOW
         }
     }, {
         timestamps: false // Desabilitar timestamps automáticos (createdAt, updatedAt)
