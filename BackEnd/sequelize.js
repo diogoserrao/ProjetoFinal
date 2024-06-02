@@ -6,7 +6,7 @@ const UserDataModel = require('./models/Users');
 const PostDataModel = require('./models/Posts');
 const CommentDataModel = require('./models/Comments');
 const LikeDataModel = require('./models/Likes');
-const Administrator = require('./models/Admins')(Sequelize);
+const Administrator = require('./models/Admins');
 console.log(process.env.DB_SCHEMA)
 
 const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_USER, process.env.DB_PASS,{ 
