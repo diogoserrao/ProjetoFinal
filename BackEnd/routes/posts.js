@@ -7,8 +7,8 @@ router.get('/', PostsController.getAllPosts);
 
 router.post('/', PostsController.createPost);
 
-router.delete('/', PostsController.deletePost);
+router.delete('/:id', PostsController.deletePost);
 
-router.put('/', PostsController.updatePost);
+router.put('/:id', PostsController.updatePost);
 
 module.exports = router;

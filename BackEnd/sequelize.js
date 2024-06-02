@@ -23,7 +23,7 @@ const User = UserDataModel(sequelize_instance, DataTypes);
 const Post = PostDataModel(sequelize_instance, DataTypes);
 const Comment = CommentDataModel(sequelize_instance, DataTypes);
 const Like = LikeDataModel(sequelize_instance, DataTypes);
-
+const Admin = Administrator(sequelize_instance, DataTypes);
 sequelize_instance.authenticate()
     .then (() => {
         console.log("Connection has been established");
@@ -40,5 +40,5 @@ sequelize_instance.sync({ force: false})
 
 
 module.exports = {
-    User, Post, Comment, Like
+    User, Post, Comment, Like, Admin
 }

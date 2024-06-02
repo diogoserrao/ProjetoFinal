@@ -21,6 +21,10 @@ module.exports = (sequelize, type) => {
             type: type.DATE,
             defaultValue: type.NOW
         },
+        imagemURL: {
+            type: type.STRING,
+            allowNull: true
+        },
         parent_tweet_id: {
             type: type.INTEGER,
             allowNull: true,

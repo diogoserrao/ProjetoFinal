@@ -23,8 +23,8 @@ exports.deleteUser = (req, res) => {
     });
 };
 exports.createUser = (req, res) => {
-    const { username, email, pass, fullname } = req.body;
-    if (!username || !email || !pass || !fullname) {
+    const { username, email, pass, fullname, bio } = req.body;
+    if (!username || !email || !pass || !fullname || bio) {
         res.send({ message: 'User created successfully' });
         return
     }
@@ -44,5 +44,28 @@ exports.createUser = (req, res) => {
 };
 
 exports.updateUser = (req, res) =>{
+    const userID = req.params.id;
+    const { username, email, pass, fullname, bio, profileImage } = req.body;
 
+    User.findByPk(userID)
+        .then(user => {
+            if (!user) {
+                return res.status(404).send({ message: 'User not found' });
+            }
+
+            return user.update({
+                username: username,
+                email: email,
+                pass: pass,
+                fullname: fullname,
+                bio: bio,
+                profileImage: profileImage
+            });
+        })
+        .then(updatedUser => {
+            res.status(200).send(updatedUser);
+        })
+        .catch(error => {
+            res.status(500).send({ error: 'An error occurred while updating the user' });
+        });
 };

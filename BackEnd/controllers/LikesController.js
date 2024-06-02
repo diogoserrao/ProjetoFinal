@@ -24,12 +24,11 @@ exports.deleteLike = (req, res) => {
 };
 exports.createLike = (req, res) =>{
     const { likedate, userID, tweetID } = req.body;
-    if (!likedate || !userID || !tweetID) {
+    if (!userID || !tweetID) {
         res.send({ message: 'Post liked successfully' });
         return
     }
     Like.create({
-        likedate: likedate,
         userID: userID,
         tweetID: tweetID
     })

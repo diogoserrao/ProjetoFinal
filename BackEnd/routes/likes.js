@@ -6,9 +6,9 @@ router.get('/', LikesController.getAllLikes);
 
 router.post('/', LikesController.createLike);
 
-router.delete('/', LikesController.deleteLike);
+router.delete('/:id', LikesController.deleteLike);
 
-router.put('/', LikesController.updateLike);
+router.put('/:id', LikesController.updateLike);
 
 
 module.exports = router;

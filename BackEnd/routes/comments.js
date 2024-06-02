@@ -7,9 +7,9 @@ router.get('/', CommentsController.getAllComments);
 
 router.post('/', CommentsController.createComment);
 
-router.delete('/', CommentsController.deleteComment);
+router.delete('/:id', CommentsController.deleteComment);
 
-router.put('/', CommentsController.updateComment);
+router.put('/:id', CommentsController.updateComment);
 
 
 module.exports = router;
