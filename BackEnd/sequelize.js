@@ -7,6 +7,7 @@ const PostDataModel = require('./models/Posts');
 const CommentDataModel = require('./models/Comments');
 const LikeDataModel = require('./models/Likes');
 const Administrator = require('./models/Admins');
+const FollowerDataModel = require('./models/Followers');
 console.log(process.env.DB_SCHEMA)
 
 const sequelize_instance = new Sequelize(process.env.DB_SCHEMA, process.env.DB_USER, process.env.DB_PASS,{ 
@@ -24,6 +25,8 @@ const Post = PostDataModel(sequelize_instance, DataTypes);
 const Comment = CommentDataModel(sequelize_instance, DataTypes);
 const Like = LikeDataModel(sequelize_instance, DataTypes);
 const Admin = Administrator(sequelize_instance, DataTypes);
+const Follower = FollowerDataModel(sequelize_instance, DataTypes);
+
 sequelize_instance.authenticate()
     .then (() => {
         console.log("Connection has been established");
@@ -40,5 +43,5 @@ sequelize_instance.sync({ force: false})
 
 
 module.exports = {
-    User, Post, Comment, Like, Admin
+    User, Post, Comment, Like, Admin, Follower
 }

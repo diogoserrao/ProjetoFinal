@@ -1,13 +1,9 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('comment', {
-        commentID: {
+    return sequelize.define('follower', {
+        followerID: {
             type: type.INTEGER,
             autoIncrement: true,
             primaryKey: true
-        },
-        imagemURL: {
-            type: type.STRING,
-            allowNull: true
         },
         userID: {
             type: type.INTEGER,
@@ -17,21 +13,20 @@ module.exports = (sequelize, type) => {
                 key: 'userID'
             }
         },
-        tweetID: {
+        followerUserID: {
             type: type.INTEGER,
             allowNull: false,
             references: {
-                model: 'tweets',
-                key: 'tweetID'
+                model: 'users',
+                key: 'userID'
             }
-        },
-        commentText: {
-            type: type.TEXT,
-            allowNull: false
-        },
-        commentDate: {
-            type: type.DATE,
-            defaultValue: type.NOW
         }
+    }, {
+        indexes: [
+            {
+                unique: true,
+                fields: ['userID', 'followerUserID']
+            }
+        ]
     });
 };
