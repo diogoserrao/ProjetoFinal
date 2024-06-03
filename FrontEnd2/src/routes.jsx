@@ -5,7 +5,7 @@ import { Status } from "./pages/Status";
 import { Timeline } from './pages/Timeline'
 import { Register } from './pages/Register'
 import { Login } from './pages/Login';
-import { ProfilePage} from './pages/ProfilePage'
+import { ProfileAll} from './pages/ProfileAll'
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/perfil',
-        element: <ProfilePage />
+        element: <ProfileAll/>
       },
       {
         path: '*',

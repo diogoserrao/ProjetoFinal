@@ -1,14 +1,12 @@
-import { ArrowsClockwise, ChatCircle, Heart } from 'phosphor-react'
-import { PerfilAvatar } from '../PerfilAvatar'
-import * as S from './Tweet.style'
+import { ArrowsClockwise, ChatCircle, Heart } from 'phosphor-react';
+import { PerfilAvatar } from '../PerfilAvatar';
+import * as S from './Tweet.style';
 
-
-//FALTA IMPORTAR USERNAME E FULLNAME
-export function Tweet({ content }) {
+export function Tweet({ content, profileImage, username, fullname }) {
   return (
     <S.linkTweet to={`/status/${content}`}>
       <S.divTweetContent>
-        <PerfilAvatar username="diogo" name="diogo12345" />
+        <PerfilAvatar profileImage={profileImage} username={username} fullname={fullname} />
         <S.tweetContentP>{content}</S.tweetContentP>
 
         <S.tweetContentFooter>
@@ -35,5 +33,6 @@ export function Tweet({ content }) {
         </S.tweetContentFooter>
       </S.divTweetContent>
     </S.linkTweet>
-  )
+  );
 }
+

@@ -50,7 +50,7 @@ export function Sidebar() {
           <span>Lists</span>
         </S.linksNavigation>
 
-        <S.linksNavigation to="*">
+        <S.linksNavigation to="/perfil">
           <User />
           <span>Profile</span>
         </S.linksNavigation>
