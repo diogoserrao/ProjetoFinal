@@ -8,6 +8,7 @@ import { GlobalStyle } from './Styles/Global.Style'
 import { Theme } from './Styles/Theme.style'
 import { DarkTheme } from './Styles/Themes/Dark.theme'
 
+
 export function App() {
   const { getDarkThemeFromLocalStorage, handleButton } = useIsDarkTheme()
   return (

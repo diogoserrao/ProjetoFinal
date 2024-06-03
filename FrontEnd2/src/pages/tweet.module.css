@@ -1,0 +1,11 @@
+.tweet {
+    padding: 10px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.tweet-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #657786;
+}
