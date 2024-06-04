@@ -75,19 +75,20 @@
 }
 
 .tweet {
+    color: #fff;
     padding: 15px;
     border-top: 1px solid #E1E8ED;
+    border-bottom: 1px solid #E1E8ED;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 10px;
+    font-size: 13px;
 }
 
 .tweet p {
     font-size: 15px;
-    color: #14171A;
-}
-
-.tweetinfo {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-size: 13px;
     color: #657786;
 }
+
+

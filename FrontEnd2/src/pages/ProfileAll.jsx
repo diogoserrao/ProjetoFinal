@@ -1,5 +1,7 @@
-import React from 'react';
+import { Tweet } from '../components/Tweet';
 import styles from './profileall.module.css';
+import React, { useState, useEffect } from 'react';
+
 
 const tweets = [
     { text: "Primeiro tweet!", date: "01 Jan 2024", likes: 10 },
@@ -7,6 +9,20 @@ const tweets = [
 ];
 
 export function ProfileAll () {
+    const [users, setUsers] = useState([]);
+    console.log(users)
+  const getUsers = () => {
+    fetch("http://localhost:3000/users") // Substitua pela URL real da API
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data.results);
+      });
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+    
     return (
         <div className={styles.profilepage}>
                 <div className={styles.profileheader}>
@@ -14,6 +30,7 @@ export function ProfileAll () {
                 <div className={styles.profileinfo}>
                     <img className={styles.profilepicture} src="profile-picture-url.jpg" alt="Profile" />
                     <div className={styles.nameandhandle}>
+
                         <h1>Nome do Usuário</h1>
                         <h2>@usuario</h2>
                     </div>
@@ -28,10 +45,10 @@ export function ProfileAll () {
             </div>
             <div className={styles.tweet}>
                 <p>{tweets.text}</p>
-                <div className={styles.tweetinfo}>
                     <span>{tweets.date}</span>
-                    <span>Likes: {tweets.likes}</span>
-                </div>
+                    <div>Tweets </div>
+                    <div>Repost {tweets.likes}</div>
+                    <div>Likes {tweets.likes}</div>
             </div>
         </div>
     );
